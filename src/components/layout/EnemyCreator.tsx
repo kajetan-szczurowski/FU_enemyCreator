@@ -4,7 +4,7 @@ import { defaultEnemy } from "../data/defaults"
 import EnemyKindSelection from "../sequence/EnemyKindSelection";
 import EnemyLevelAndDices from "../sequence/EnemyLevelAndDices";
 
-const CreationSequence = [EnemyKindSelection, EnemyLevelAndDices];
+const CreationSequence = [EnemyKindSelection, EnemyLevelAndDices, EnemyKindSelection];
 export default function EnemyCreator() {
     const enemyData = useRef<Enemy>(defaultEnemy);
     const readyForNextStep = useRef(false);
