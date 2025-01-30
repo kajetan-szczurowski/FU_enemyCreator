@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+#Fabula Ultima data
+src/components/data/damages.ts
+src/components/data/states.ts
+src/components/data/inventory
+
