@@ -4,6 +4,8 @@ export type Enemy = {
     weaknesses: string[],
     resistancesToEffects: string[],
     skills: string[],
+    attacks: WeaponType[],
+    armor: ArmorType[],
 
     maxNumberOfSKills: number,
     extraRule? : string

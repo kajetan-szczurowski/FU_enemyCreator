@@ -1,11 +1,13 @@
 import { useState, useEffect, useRef } from 'react';
-import { SequenceStepProps } from "../data/types";
+import { ArmorType, SequenceStepProps } from "../data/types";
 import EnemyState from '../mechanics/EnemyState';
 import { damages } from '../data/damages';
 import { states } from '../data/states';
 import { ItemGroup, WeaponType } from '../data/types';
 import ItemPicker from '../mechanics/itemPicking/ItemPicker';
-import {getCommonWeapons} from '../data/inventory/common_weapons'
+import {getCommonWeapons} from '../data/inventory/commonWeapons'
+import { getCommonArmors } from '../data/inventory/commonArmors';
+import "../styles/sequence.css"
 
 export default function EnemyLevelAndDices({enemyRef, readyFeedback}: SequenceStepProps) {
   return (
@@ -16,8 +18,10 @@ export default function EnemyLevelAndDices({enemyRef, readyFeedback}: SequenceSt
           <EnemyState enemyRef={enemyRef} source = {damages} enemyValueKeyName = "weaknesses" label = "Slabosci"/>
           <EnemyState enemyRef={enemyRef} source = {states.map(st => st.label)} enemyValueKeyName = "resistancesToEffects"  label = "Odpornosci na efekty"/>
       </div>
-      <div>
-        <ItemPicker<WeaponType> itemSources = {getCommonWeapons()}/>
+      <div className = "item-selectors">
+        <ItemPicker<WeaponType> itemSources = {getCommonWeapons()} enemyRef={enemyRef}/>
+        <ItemPicker<ArmorType> itemSources = {getCommonArmors()} enemyRef={enemyRef} allowMany = {false} />
+
       </div>
     </>
 

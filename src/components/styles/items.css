@@ -1,0 +1,23 @@
+.item-container{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.item-container:hover{
+    color: red;
+    cursor: pointer;
+}
+
+.item-data{
+    display: flex;
+    justify-content: space-between;
+}
+
+.item-picker{
+    width: 600px;
+}
+
+.display-false{
+    display: none;
+}
